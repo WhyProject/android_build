@@ -181,7 +181,7 @@ all_product_configs := $(call get-product-makefiles,\
     $(SRC_TARGET_DIR)/product/AndroidProducts.mk)
 else
  ifneq ($(CUSTOM_BUILD),)
-    all_product_configs := device/*/$(CUSTOM_BUILD)/why.mk
+    all_product_configs := $(shell ls device/*/$(CUSTOM_BUILD)/why.mk)
   else
     # Read in all of the product definitions specified by the AndroidProducts.mk
     # files in the tree.
